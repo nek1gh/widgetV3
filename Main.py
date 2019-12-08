@@ -13,7 +13,6 @@ print(number)
 for num in data:
     for i in (num['custom_fields']):
         print(i)
-
 # i = 1
 # l = 0
 # for num in data:
