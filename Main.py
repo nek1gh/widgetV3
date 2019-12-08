@@ -27,6 +27,7 @@ creds = ServiceAccountCredentials.from_json_keyfile_name('creds.json', scope)
 client = gspread.authorize(creds)
 row = 2
 for i in data:
+    row += 1
     id = i['id']
     name = i['name']
     custom_fields_id = '1'
@@ -48,10 +49,10 @@ for i in data:
                 else:
                     custom_fields_id_values_enum = '8'
         else:
-            custom_fields_id = '1'
-            custom_fields_name = '2'
-            custom_fields_id_values_value = '3'
-            custom_fields_id_values_enum = '4'
+            custom_fields_id = '9'
+            custom_fields_name = '10'
+            custom_fields_id_values_value = '11'
+            custom_fields_id_values_enum = '12'
         print(id)
         print(name)
         print(custom_fields_id)
@@ -62,4 +63,4 @@ for i in data:
     sheet = client.open("n1first").sheet1
     data = [id, name, custom_fields_id, custom_fields_name, custom_fields_id_values_value, custom_fields_id_values_enum]
     sheet.insert_row(data, row)
-    row = +row
+
