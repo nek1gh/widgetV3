@@ -33,30 +33,29 @@ for i in data:
         if len(i2) != 0:
             custom_fields_id = i2['id']
             custom_fields_name = i2['name']
+            custom_fields_id_values_value = ' '
+            custom_fields_id_values_enum = ' '
             for i3 in (i2['values']):
+                custom_fields_id_values_value = i3['value']
                 if len(i2['values']) != 1:
-                    custom_fields_id_values_value = i3['value']
                     custom_fields_id_values_enum = i3['enum']
                 elif len(i2['values']) == 1:
-                    custom_fields_id_values_value = i3['value']
                     custom_fields_id_values_enum = ' '
                 else:
-                    custom_fields_id_values_value = ' '
                     custom_fields_id_values_enum = ' '
-    else:
-        custom_fields_id = ' '
-        custom_fields_name = ' '
-        custom_fields_id_values = ' '
+        else:
+            custom_fields_id = ' '
+            custom_fields_name = ' '
+            custom_fields_id_values_value = ' '
+            custom_fields_id_values_enum = ' '
+        print(id)
+        print(name)
+        print(custom_fields_id)
+        print(custom_fields_name)
+        print(custom_fields_id_values_value)
+        print(custom_fields_id_values_enum)
 
-        custom_fields_id_values_value = ' '
-        custom_fields_id_values_enum = ' '
-    print(id)
-    print(name)
-    print(custom_fields_id)
-    print(custom_fields_name)
-    print(custom_fields_id_values)
-    print(custom_fields_id_values_value)
-    print(custom_fields_id_values_enum)
+
 
     sheet = client.open("n1first").sheet1
     data = [id, name, custom_fields_id, custom_fields_name, custom_fields_id_values_value, custom_fields_id_values_enum]
